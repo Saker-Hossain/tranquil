@@ -12,7 +12,7 @@
       @include('admin.navbar')
         <!-- partial -->
         <div class="container-fluid page-body-wrapper">
-            <div class="container-fluid page-body-wrapper">
+            <div class="container" align="center" style="padding-top: 100px">
                 <table>
                     <tr style="background-color: black">
                         <th style="padding: 10px">Name</th>
@@ -24,6 +24,7 @@
                         <th style="padding: 10px">Status</th>
                         <th style="padding: 10px">Approve</th>
                         <th style="padding: 10px">Cancel</th>
+                        <th style="padding: 10px">Send Mail</th>
                     </tr>
 
                     @foreach ($data as $appoint)
@@ -37,6 +38,7 @@
                         <td>{{$appoint->status}}</td>
                         <td><a class="btn btn-success" href="{{url('approved',$appoint->id)}}">Approved</a></td>
                         <td><a class="btn btn-danger" href="{{url('canceled',$appoint->id)}}">Canceled</a></td>
+                        <td><a class="btn btn-primary" href="{{url('emailview',$appoint->id)}}">Send Mail</a></td>
                     </tr>
                     @endforeach
 
